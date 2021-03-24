@@ -2,12 +2,13 @@ import React from 'react';
 import { Text, initializeIcons } from '@fluentui/react';
 import { Card } from '@uifabric/react-cards';
 
-
-
 const container = {
   display: 'flex',
   justifyContent: 'center',
   margin: '10vh 0',
+  '@media(min-width: 600px)': {
+    
+  },
 };
 
 const icon = {
@@ -33,6 +34,7 @@ const styles = {
     root: {
       fontSize: 20,
       fontWeight: 'bold',
+       color: '#0c035e',
     }
   },
   amount: {
@@ -53,22 +55,22 @@ const styles = {
 
 const cards = [
   {
-    title: 'Current Balance',
+    title: 'Balance',
     amount: 'INR',
     icon: 'Money',
-    percentage: '2.3',
+    percentage: '0.0',
   },
   {
-    title: 'Current Expanses',
+    title: ' Expenses',
     amount: 'INR',
     icon: 'PaymentCard',
-    percentage: '0.3'
+    percentage: '0.0'
   },
   {
-    title: 'Current Income',
+    title: 'Income',
     amount: 'INR',
     icon: 'Savings',
-    percentage: '1.3'
+    percentage: '0.0'
   }
 ]
 
@@ -77,7 +79,7 @@ const CardsSection = () => {
   return (
     <div style={container}>
       {cards.map((card) => (
-        <div className="s-Grid-col ms-sm3 ms-xl3">
+        <div className="s-Grid-col ms-sm12 ms-xl3">
           <Card styles={styles.cardStyles}>
             <Card.Section>
               <Card.Item>
@@ -87,12 +89,7 @@ const CardsSection = () => {
               <Card.Item>
                 <Text styles={styles.amount}>{card.amount}</Text>
               </Card.Item>
-              <Card.Item>
-                <Text styles={styles.percentage}>
-                  {card.percentage} %
-                </Text>
-              </Card.Item>
-            </Card.Section>
+             </Card.Section>
           </Card>
         </div>
       ))}

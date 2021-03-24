@@ -32,7 +32,7 @@ const links = [
       {
         name: 'Settings',
         key: 'key2',
-        url: '/',
+        url: '/todo',
         iconProps: {
           iconName: 'PlayerSettings',
           styles: {
