@@ -3,8 +3,6 @@ import { Text, initializeIcons } from '@fluentui/react';
 import { Card } from '@uifabric/react-cards';
 
 const container = {
-  display: 'flex',
-  justifyContent: 'center',
   margin: '10vh 0',
   '@media(min-width: 600px)': {
     
@@ -25,9 +23,9 @@ const styles = {
       background: 'white',
       padding: 20,
       borderTop: '5px solid #0078d4',
-      width: '90%',
-      maxWidth: '90%',
-      margin: 'auto',
+      width: '95%',
+      maxWidth: '95%',
+      margin: '20px auto',
     }
   },
   header: {
@@ -77,12 +75,13 @@ const cards = [
 const CardsSection = () => {
   initializeIcons();
   return (
-    <div style={container}>
+    <div class="ms-Grid">
+    <div className="ms-Grid-row" style={container}>
       {cards.map((card) => (
-        <div className="s-Grid-col ms-sm12 ms-xl3">
+        <div className="ms-Grid-col ms-sm12 ms-lg4">
           <Card styles={styles.cardStyles}>
             <Card.Section>
-              <Card.Item>
+              <Card.Item grow={1}>
                 <i style={icon} className={`ms-Icon ms-Icon--${card.icon}`} aria-hidden="true"></i>
                 <Text styles={styles.header}>{card.title}</Text>
               </Card.Item>
@@ -94,6 +93,7 @@ const CardsSection = () => {
         </div>
       ))}
     </div>
+     </div>
   );
 };
 

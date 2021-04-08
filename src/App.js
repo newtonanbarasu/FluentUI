@@ -45,7 +45,7 @@ function App() {
               
             </div>
             <div className="main-element ms-Grid-col ms-sm10 ms-xl10">
-              <div className="ms-Grid-row">
+              <div>
                   <CardsSection />
               </div>
               <div className="ms-Grid-row">
